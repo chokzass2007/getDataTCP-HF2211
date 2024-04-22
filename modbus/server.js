@@ -5,7 +5,7 @@ const servers = [
   // { ip: '192.0.6.201', port: 8899 },
   // { ip: '192.0.160.109', port: 8899 },
   // { ip: '192.0.160.105', port: 8899 },
-  { ip: '192.168.2.25', port: 8899 },
+  { ip: '192.168.2.31', port: 8899 },
 ];
 
 servers.forEach(server => {
@@ -14,7 +14,7 @@ servers.forEach(server => {
     console.log(`Connected to ${server.ip}:${server.port}`);
 
     client.on('data', data => {
-      console.log(`Received data from ${server.ip}:${server.port}: ${data.toString()}`);
+      console.log(`Received data from ${server.ip}:${server.port}: ${data.toString(10)}`);
     });
 
     client.on('error', error => {
